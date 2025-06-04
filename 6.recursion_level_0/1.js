@@ -33,6 +33,19 @@ function powerOfTwo(n) {
 let ans = powerOfTwo(8);
 console.log(ans);
 
+/**
+ * is power of 2
+ *
+ * Ex: 16 => 2 ** 4, 8 => 2 ** 3 => true
+ * 15 => false
+ */
+
+function isPowerOfTwo(n) {
+  if (n === 1) return true;
+  if (n % 2) return false;
+  return isPowerOfTwo(Math.floor(n / 2));
+}
+
 // fibonacci
 
 function fibo(n) {
