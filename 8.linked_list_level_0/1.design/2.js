@@ -119,4 +119,27 @@ class LinkedList {
     }
     return curr.value;
   }
+
+  middleOfLinkedList() {
+    let slow = this.head;
+    let fast = this.head;
+
+    while (fast && fast.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+
+    return slow;
+  }
 }
+
+let myLinkedList = new LinkedList();
+// myLinkedList.addAtHead(6);
+myLinkedList.addAtHead(5);
+myLinkedList.addAtHead(4);
+myLinkedList.addAtHead(3);
+myLinkedList.addAtHead(2);
+myLinkedList.addAtHead(1);
+myLinkedList.printList();
+const middle = myLinkedList.middleOfLinkedList();
+console.log(middle.value);
