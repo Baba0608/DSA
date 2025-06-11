@@ -104,3 +104,38 @@ class LinkedList:
             curr = curr.next
 
         return curr.value
+
+    def middle_of_linked_list(self):
+        slow = fast = self.head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow
+
+    def reverse_linkedlist(self):
+        prev = None
+        curr = self.head
+
+        while curr:
+            nextNode = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nextNode
+
+        self.head = prev
+
+
+linked_ist = LinkedList()
+linked_ist.add_at_head(5)
+linked_ist.add_at_head(4)
+linked_ist.add_at_head(3)
+linked_ist.add_at_head(2)
+linked_ist.add_at_head(1)
+
+linked_ist.print_list()
+
+linked_ist.reverse_linkedlist()
+
+linked_ist.print_list()
