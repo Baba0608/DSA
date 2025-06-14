@@ -30,16 +30,18 @@ def sum_of_arr(arr, n=len(arr) - 1):
 #  power of 2
 
 
-def power_of_2(n):
+def power_of_two(n):
     if n == 0:
         return 1
 
-    res = power_of_2(n // 2)
+    if n < 0:
+        return 1 / power_of_two(-n)
 
     if n % 2:
-        return 2 * res * res
+        return 2 * power_of_two(n - 1)
     else:
-        return res * res
+        ans = power_of_two(n / 2)
+        return ans * ans
 
 
 # is power of 2

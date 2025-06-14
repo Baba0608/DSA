@@ -24,10 +24,17 @@ function sumArray(arr, n = arr.length - 1) {
 function powerOfTwo(n) {
   if (n === 0) return 1;
 
-  let res = powerOfTwo(Math.floor(n / 2));
+  // for negative numbers
+  if (n < 0) {
+    return 1 / powerOfTwo(-n);
+  }
 
-  if (n % 2 === 0) return res * res;
-  else return 2 * res * res;
+  if (n % 2) {
+    return 2 * powerOfTwo(n - 1);
+  } else {
+    let ans = powerOfTwo(n / 2);
+    return ans * ans;
+  }
 }
 
 let ans = powerOfTwo(8);
