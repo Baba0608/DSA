@@ -22,3 +22,25 @@ def preorder(root):
 
 ans = preorder(root)
 print(ans)
+
+
+def preorder_iterative(root):
+    st = [root]
+    ans = []
+
+    while len(st):
+        curr = st.pop()
+
+        ans.append(curr.val)
+
+        if curr.right:
+            st.append(curr.right)
+
+        if curr.left:
+            st.append(curr.left)
+
+    return ans
+
+
+ans1 = preorder_iterative(root)
+print(ans1)

@@ -34,3 +34,67 @@ E.right = G;
 F.right = H;
 
 export default A;
+
+const tree = {
+  root: {
+    val: "A",
+    left: {
+      val: "B",
+      left: {
+        val: "D",
+        left: null,
+        right: {
+          val: "H",
+          left: null,
+          right: null,
+        },
+      },
+      right: {
+        val: "E",
+        left: null,
+        right: null,
+      },
+    },
+    right: {
+      val: "C",
+      left: {
+        val: "F",
+        left: {
+          val: "I",
+          left: {
+            val: "L",
+            left: null,
+            right: null,
+          },
+          right: null,
+        },
+        right: null,
+      },
+      right: {
+        val: "G",
+        left: {
+          val: "J",
+          left: {
+            val: "M",
+            left: null,
+            right: null,
+          },
+          right: {
+            val: "N",
+            left: null,
+            right: null,
+          },
+        },
+        right: {
+          val: "K",
+          left: null,
+          right: {
+            val: "O",
+            left: null,
+            right: null,
+          },
+        },
+      },
+    },
+  },
+};
